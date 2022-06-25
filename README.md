@@ -19,7 +19,6 @@ Note: Not all entities that are missing their parent will spam this error, so th
 ## Commands
 
 - `debugMissingParents` -- Prints out information about all entities that are missing their parent.
-  Example output:
 - `debugMissingParents kill` -- Kills all entities that are missing their parent.
 
 Example output:
