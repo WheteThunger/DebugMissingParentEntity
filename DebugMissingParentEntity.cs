@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Oxide.Plugins
 {
-    [Info("Debug Missing Parent Entity", "WhiteThumder", "1.0.0")]
+    [Info("Debug Missing Parent Entity", "WhiteThunder", "1.0.0")]
     [Description("Identifies and optionally kills entities that are missing their parent.")]
     public class DebugMissingParentEntity : CovalencePlugin
     {
