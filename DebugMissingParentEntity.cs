@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Oxide.Plugins
 {
-    [Info("Debug Missing Parent Entity", "WhiteThunder", "1.0.0")]
+    [Info("Debug Missing Parent Entity", "WhiteThunder", "1.0.1")]
     [Description("Identifies and optionally kills entities that are missing their parent.")]
     public class DebugMissingParentEntity : CovalencePlugin
     {
@@ -22,7 +22,7 @@ namespace Oxide.Plugins
                 if (!networkable.parentEntity.IsSet())
                     continue;
 
-                var parentEntityId = networkable.parentEntity.uid;
+                var parentEntityId = networkable.parentEntity.uid.Value;
                 if (parentEntityId == 0)
                     continue;
 
@@ -31,7 +31,7 @@ namespace Oxide.Plugins
                 if (parent == null && networkable != null && !networkable.IsDestroyed)
                 {
                     foundObjects.Add(networkable);
-                    reportLines.Add($"{networkable.net.ID} (parent: {parentEntityId}) | {networkable.GetType()} | {networkable.PrefabName} @ {networkable.transform.position}");
+                    reportLines.Add($"{networkable.net.ID.Value} (parent: {parentEntityId}) | {networkable.GetType()} | {networkable.PrefabName} @ {networkable.transform.position}");
                 }
             }
 
